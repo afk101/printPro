@@ -8,7 +8,7 @@ setup(
     description='用于调试输出的高级日志工具',  # 简短描述
     long_description=open('README.md', 'r', encoding='utf-8').read(),  # 详细描述
     long_description_content_type='text/markdown',  # 详细描述的类型
-    url='https://github.com/yourusername/printPro',  # 项目主页
+    url='https://github.com/afk101/printPro',  # 项目主页
     packages=find_packages(),  # 自动发现包
     install_requires=[
         'psutil',  # 依赖项
