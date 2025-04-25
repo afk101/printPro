@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='print-lite',  # 包名
-    version='0.1.3',  # 版本号
+    version='0.1.2',  # 版本号
     author='GDluCk',  # 作者名
     author_email='1477482440@qq.com',  # 作者邮箱
     description='用于调试输出的高级日志工具',  # 简短描述
@@ -10,8 +10,6 @@ setup(
     long_description_content_type='text/markdown',  # 详细描述的类型
     url='https://github.com/afk101/printPro',  # 项目主页
     packages=find_packages(),  # 自动发现包
-    package_dir={'print_lite': 'print_lite'},  # 明确指定包目录映射
-    py_modules=['print_lite'],  # 确保模块被正确识别
     install_requires=[
         'psutil',  # 依赖项
     ],
