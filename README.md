@@ -17,6 +17,16 @@
 pip install print-lite
 ```
 
+## 正确导入方式
+
+```python
+# 推荐的导入方式
+from print_lite import printPro
+
+# 如果遇到导入问题，也可以尝试
+from print_lite.printPro import printPro
+```
+
 ## 快速开始
 
 ```python
@@ -62,7 +72,7 @@ printPro(
 
 ```python
 # 清空所有日志（不包括持久化日志）
-from printPro import clear_printpro_logs
+from print_lite import clear_printpro_logs
 clear_printpro_logs()
 
 # 清空所有日志（包括持久化日志）
