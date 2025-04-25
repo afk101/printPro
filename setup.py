@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='print-lite',  # 包名
-    version='0.1.2',  # 版本号
+    name='print_opt',  # 包名
+    version='0.1.0',  # 版本号
     author='GDluCk',  # 作者名
     author_email='1477482440@qq.com',  # 作者邮箱
     description='用于调试输出的高级日志工具',  # 简短描述

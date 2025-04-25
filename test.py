@@ -1,4 +1,4 @@
-from print_lite import printPro
+from print_opt import printPro
 
 printPro("Hello, World!")
 
