@@ -1,14 +1,14 @@
 # 如何将 printPro 上传到 PyPI
 
-按照以下步骤将您的 printPro 包上传到 PyPI，让其他人可以通过 `pip install` 使用它。
+按照以下步骤将 printPro 包上传到 PyPI，让其他人可以通过 `pip install` 使用它。
 
 ## 准备工作
 
-1. 确保您已注册 PyPI 账号：
+1. 确保已注册 PyPI 账号：
    - 访问 [PyPI 官网](https://pypi.org/) 注册账号
    - 完成邮箱验证
 
-2. 确保您的项目结构正确：
+2. 项目结构：
    ```
    printPro/
    ├── printPro/
@@ -43,7 +43,11 @@
    pip install --upgrade pip setuptools wheel twine
    ```
 
-3. 构建包：
+3. 构建包：  
+   ```bash
+   rm -rf dist/ build/ *.egg-info/
+   ```
+   在构建之前先清空一下，否则新的构建和旧的构建重复
    ```bash
    python setup.py sdist bdist_wheel
    ```
@@ -56,7 +60,7 @@
 
 ## 上传到 PyPI
 
-1. 上传到 TestPyPI（可选但推荐，用于测试）：
+1. 上传到 TestPyPI（用于测试）（但是API token不是正式的）：
    ```bash
    twine upload --repository-url https://test.pypi.org/legacy/ dist/*
    ```
@@ -80,30 +84,14 @@
 
 ## 更新包
 
-当您需要更新包时，请修改 `setup.py` 中的版本号，然后重复构建和上传步骤。
+当需要更新包时，修改 `setup.py` 中的版本号，然后重复构建和上传步骤。
 
 ## 保存凭据（可选）
 
-为了避免每次上传都输入凭据，您可以创建 `~/.pypirc` 文件：
-
-```ini
-[distutils]
-index-servers =
-    pypi
-    testpypi
-
-[pypi]
-username = your_username
-password = your_password
-
-[testpypi]
-repository = https://test.pypi.org/legacy/
-username = your_username
-password = your_password
-```
+为了避免每次上传都输入凭据，可以创建 `~/.pypirc` 文件，具体可以查看官网
 
 ## 遇到问题？
 
-- 检查您的包名是否已被占用：访问 https://pypi.org/project/printPro/ 查看
+- 检查包名是否已被占用：访问 https://pypi.org/project/ 查看
 - 确保您满足了所有依赖要求
 - 查看 PyPI 文档：https://packaging.python.org/tutorials/packaging-projects/ 
