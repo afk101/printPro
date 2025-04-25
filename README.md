@@ -14,13 +14,13 @@
 ## 安装
 
 ```bash
-pip install print_pro_debug
+pip install print-lite
 ```
 
 ## 快速开始
 
 ```python
-from print_pro_debug import printPro
+from print_lite import printPro
 
 # 基本用法
 printPro("Hello, World!")

@@ -79,7 +79,7 @@
 
 4. 测试安装：
    ```bash
-   pip install printPro
+   pip install xxx
    ```
 
 ## 更新包

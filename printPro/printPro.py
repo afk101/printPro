@@ -19,9 +19,7 @@ def _get_log_dirs():
     :return: 元组 (主目录路径, 临时目录路径)
     """
     # 主目录路径
-    root_dir = os.path.abspath(
-        os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    )
+    root_dir = os.getcwd()
     main_log_dir = os.path.join(root_dir, "printProLog")
 
     # 临时目录路径（使用进程ID确保多进程安全）

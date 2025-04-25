@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='print_pro_debug',  # 包名
+    name='printpro',  # 包名
     version='0.1.0',  # 版本号
     author='GDluCk',  # 作者名
     author_email='1477482440@qq.com',  # 作者邮箱
