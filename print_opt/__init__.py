@@ -1,6 +1,6 @@
 from .print_opt import printPro, clear_printpro_logs
 import requests
-import pkg_resources
+import importlib.metadata
 import sys
 import threading
 import os
@@ -17,7 +17,7 @@ try:
     # 如果是已安装的包，尝试从包内读取
     if not os.path.exists(version_path):
         try:
-            __version__ = pkg_resources.get_distribution('print_opt').version
+            __version__ = importlib.metadata.version('print_opt')
         except Exception:
             __version__ = '0.1.1'  # 默认版本号，如果无法获取
     else:
