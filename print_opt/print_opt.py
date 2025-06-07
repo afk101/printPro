@@ -327,26 +327,3 @@ if not _is_production:
 if not _is_production:
     _initialize_log_dirs()
 
-
-# 为了兼容旧版本，保留这个函数
-def is_file_empty_or_old(file_path, threshold_seconds=5):
-    """
-    检查文件是否为空或者是否在服务重启后新建的
-    (此函数保留用于兼容性，在新版中不再使用)
-    """
-    # 在生产环境中，始终返回True（表示文件为空或过时）
-    if _is_production:
-        return True
-
-    if not os.path.exists(file_path):
-        return True
-
-    # 检查文件大小是否为0
-    if os.path.getsize(file_path) == 0:
-        return True
-
-    # 检查文件最后修改时间
-    current_time = time.time()
-    file_mod_time = os.path.getmtime(file_path)
-
-    return (current_time - file_mod_time) > threshold_seconds
