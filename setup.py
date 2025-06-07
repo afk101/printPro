@@ -1,8 +1,13 @@
 from setuptools import setup, find_packages
+import os
+
+# 读取版本号
+with open('version.txt', 'r', encoding='utf-8') as f:
+    version = f.read().strip()
 
 setup(
     name='print_opt',  # 包名
-    version='0.1.1',  # 版本号
+    version=version,  # 从version.txt读取版本号
     author='GDluCk',  # 作者名
     author_email='1477482440@qq.com',  # 作者邮箱
     description='用于调试输出的高级日志工具',  # 简短描述
@@ -12,6 +17,7 @@ setup(
     packages=find_packages(),  # 自动发现包
     install_requires=[
         'psutil',  # 依赖项
+        'requests',  # 用于版本检查
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
@@ -19,4 +25,5 @@ setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',  # 支持的 Python 版本
+    include_package_data=True,  # 包含MANIFEST.in中指定的文件
 ) 
