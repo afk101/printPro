@@ -56,8 +56,9 @@ def _check_version_worker():
                 # 比较版本号
                 if current_version != latest_version:
                     # 使用ANSI转义码生成警告文本
-                    warning = '\033[91mWARNING: Please install the latest version of print_opt ==>  pip install --upgrade print_opt\033[0m'
-                    print(warning, file=sys.stderr)
+                    redWarning = '\033[91mWARNING: Please install the latest version of print_opt ==>  pip install --upgrade print_opt\033[0m'
+                    yellowWarning = '\033[93mWARNING: Please install the latest version of print_opt ==>  pip install --upgrade print_opt\033[0m'
+                    print(redWarning, file=sys.stderr)
                 break  # 成功获取版本信息，跳出循环
             except Exception:
                 retry_count += 1
