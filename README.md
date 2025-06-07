@@ -11,16 +11,20 @@
 - 自动清理过期的临时日志
 - 在生产环境中自动禁用（不影响性能）
 
+## 推荐配置  
+- 在.gitignore中忽略printProLog文件夹
+- 对于热更新的服务，启动时请忽略printProLog文件夹
+
 ## 安装
 
 ```bash
-pip install print-lite
+pip install print_opt
 ```
 
 ## 快速开始
 
 ```python
-from print_lite import printPro
+from print_opt import printPro
 
 # 基本用法
 printPro("Hello, World!")
@@ -62,7 +66,7 @@ printPro(
 
 ```python
 # 清空所有日志（不包括持久化日志）
-from printPro import clear_printpro_logs
+from print_opt import clear_printpro_logs
 clear_printpro_logs()
 
 # 清空所有日志（包括持久化日志）
